@@ -10,7 +10,11 @@ namespace MyGameTask
         private SpriteBatch _spriteBatch;
         Texture2D labTexture;
         Rectangle labTextureRect;
+        Texture2D bigBrainTexture;
         Texture2D brainTexture;
+        Rectangle brainTextureRect;
+        Rectangle bigBrainTextureRect;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -30,6 +34,12 @@ namespace MyGameTask
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             labTexture = Content.Load<Texture2D>("labrat");
             labTextureRect = new Rectangle(0, 0, 800, 500);
+
+            brainTexture = Content.Load<Texture2D>("brain");
+            brainTextureRect = new Rectangle(400, 150, 200, 200);
+
+            bigBrainTexture = Content.Load<Texture2D>("brain");
+            bigBrainTextureRect = new Rectangle(200, 200, 100, 100);
             // TODO: use this.Content to load your game content here
         }
 
@@ -49,7 +59,8 @@ namespace MyGameTask
             _spriteBatch.Begin();
 
             _spriteBatch.Draw(labTexture, labTextureRect, Color.White);
-
+            _spriteBatch.Draw(brainTexture, brainTextureRect, Color.White);
+            _spriteBatch.Draw(bigBrainTexture, bigBrainTextureRect, Color.White);
             _spriteBatch.End();
 
             base.Draw(gameTime);
